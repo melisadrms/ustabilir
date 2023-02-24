@@ -3,14 +3,20 @@ import logoBigger from "../assets/logoBigger.png";
 import logoSmaller from "../assets/logoSmaller.png";
 import { useState } from "react";
 import DropDown from "./dropDown";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const handleDropDown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  console.log(isDropdownOpen);
+  let navigate = useNavigate();
+  const routeChange = () => {
+    let path = `newPath`;
+    navigate(path);
+  };
 
   return (
     <div className=" h-20 border shadow-lg shadow-slate-500/20 ">
@@ -19,7 +25,8 @@ function Navbar() {
           <Icon
             icon="icon-park:hamburger-button"
             height="1.5rem"
-            className="mt-3 block md:hidden mr-5  "
+            className="mt-3 block md:hidden mr-5"
+            onClick={routeChange}
           />
           <img
             src={logoBigger}
