@@ -13,20 +13,16 @@ function Navbar() {
   };
 
   let navigate = useNavigate();
-  const routeChange = () => {
-    let path = `newPath`;
-    navigate(path);
-  };
 
   return (
-    <div className=" h-20 border shadow-lg shadow-slate-500/20 ">
-      <div className="flex md:justify-evenly mt-3">
+    <div className=" h-20 border shadow-lg shadow-slate-500/20 fixed top-0 w-full z-50 bg-white">
+      <div className="flex md:justify-evenly md:gap-72 mt-3">
         <div className="flex">
           <Icon
             icon="icon-park:hamburger-button"
             height="1.5rem"
-            className="mt-3 block md:hidden mr-5"
-            onClick={routeChange}
+            className="mt-3 block md:hidden mr-5 max-md:ml-5"
+            onClick={() => navigate("/hamburger")}
           />
           <img
             src={logoBigger}
@@ -44,7 +40,7 @@ function Navbar() {
             <button>Usta Rehberi</button>
           </div>
         </div>
-        <button className="h-12 w-40 rounded bg-[#f68761] max-md:ml-auto">
+        <button className="h-12 w-40 rounded bg-[#f68761] max-md:ml-auto text-white font-bold max-md:mr-5">
           Talep Oluştur
         </button>
       </div>
